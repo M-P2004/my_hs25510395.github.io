@@ -1,0 +1,366 @@
+```html
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maleesha T. Pandikorala - E-Portfolio</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .profile-photo img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            margin: 15px 0 5px;
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .header p {
+            margin: 5px 0 0;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .nav {
+            background: #34495e;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav li {
+            margin: 0;
+        }
+
+        .nav a {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+            font-weight: 500;
+        }
+
+        .nav a:hover,
+        .nav a.active {
+            background: #2c3e50;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .education-item, .project-item {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #ecf0f1;
+            transition: all 0.3s;
+        }
+
+        .skill-item:hover {
+            border-color: #3498db;
+            transform: translateY(-2px);
+        }
+
+        .hobbies-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .hobby-item {
+            background: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 2px solid #3498db;
+            color: #3498db;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .hobby-item:hover {
+            background: #3498db;
+            color: white;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+        }
+
+        .contact-info {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .nav ul {
+                flex-direction: column;
+            }
+
+            .nav a {
+                text-align: center;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="profile-photo">
+                <img src="WhatsApp Image 2025-08-08 at 13.25.24.jpeg" alt="Profile Photo">
+            </div>
+            <h1>Maleesha Thilakshi Pandikorala</h1>
+            <p>Undergraduate in Biotechnology | Research Associate</p>
+        </header>
+
+        <nav class="nav">
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <section id="about" class="section">
+                <h2>About Me</h2>
+                <p>
+                    A highly motivated and detail-oriented undergraduate in Biotechnology 
+                    with a strong foundation in molecular biology, microbiology, and laboratory techniques. 
+                    Passionate about scientific research and eager to contribute to ongoing projects 
+                    through data analysis, experimental design, and hands-on lab work. 
+                    Quick to learn, adaptable, and committed to applying academic knowledge in real-world research settings.
+                </p>
+            </section>
+
+            <section id="education" class="section">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>Bachelor of Science (Hons) in Biotechnology</h3>
+                    <p><strong>SLIIT | Sri Lanka Institute of Information Technology</strong></p>
+                    <span class="year">2025 - 2029</span>
+                </div>
+
+                <div class="education-item">
+                    <h3>GCE Advanced Level (Biology Stream)</h3>
+                    <p><strong>Newstead Girls’ College</strong></p>
+                    <span class="year">2023</span>
+                    <p>Biology (C), Chemistry (C), Physics (S), General English (A)</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>GCE Ordinary Level</h3>
+                    <p><strong>Newstead Girls’ College</strong></p>
+                    <span class="year">2021</span>
+                    <p>English Language (A), Sinhala (A), History (A), Science (A), Business & Accounting (A), Buddhism (A), ICT (B), Mathematics (B), Music (B)</p>
+                </div>
+            </section>
+
+            <section id="achievements" class="section">
+                <h2>Achievements</h2>
+                <ul>
+                    <li>“Tennis 10s” Championship – 2011</li>
+                    <li>1st place in Junior Girls’ Choir – 2016</li>
+                    <li>2nd place in Junior Girls’ Choir – 2017</li>
+                    <li>3rd place in Senior Girls’ Choir – 2019</li>
+                    <li>1st place in Senior English Drama – 2019</li>
+                    <li>School Prefect</li>
+                </ul>
+            </section>
+
+            <section id="skills" class="section">
+                <h2>Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-item"><strong>Teamwork</strong></div>
+                    <div class="skill-item"><strong>Time Management</strong></div>
+                    <div class="skill-item"><strong>Communication</strong></div>
+                    <div class="skill-item"><strong>Organization</strong></div>
+                    <div class="skill-item"><strong>Computer Literacy</strong></div>
+                </div>
+            </section>
+
+            <section id="hobbies" class="section">
+                <h2>Extracurricular Activities</h2>
+                <div class="hobbies-list">
+                    <div class="hobby-item">🎶 Choir</div>
+                    <div class="hobby-item">🎭 Drama Club</div>
+                    <div class="hobby-item">🎾 Tennis</div>
+                    <div class="hobby-item">🏊 Swimming</div>
+                    <div class="hobby-item">🥋 Taekwondo</div>
+                    <div class="hobby-item">♟️ Chess</div>
+                </div>
+            </section>
+
+            <section id="resume" class="section">
+                <h2>Download Resume</h2>
+                <p>You can download my complete resume here:</p>
+                <a href="HS25510395_CV.pdf" class="download-btn" download>📄 Download PDF Resume</a>
+            </section>
+
+            <section id="contact" class="section">
+                <h2>Contact Details</h2>
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>📧 Email: <a href="mailto:mtpandikorala@gmail.com">mtpandikorala@gmail.com</a></p>
+                    <p>📱 Phone: <a href="tel:+94771583920">+94 77 158 3920</a></p>
+                    <p>🏠 Address: No.106/8, Temple Road, Negombo</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        // Highlight active section in navbar
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+```
